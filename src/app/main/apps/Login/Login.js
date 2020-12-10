@@ -78,6 +78,7 @@ function Login() {
                                 name='user'
                                 value={formValues.user}
                                 onChange={handleChange}
+                                autoComplete='off'
                                 />
                             <img src={User} alt="User" width='30px' height='35px'/>
                             {formErrors.user && (
@@ -92,6 +93,7 @@ function Login() {
                                 name='email'
                                 value={formValues.email}
                                 onChange={handleChange}
+                                autoComplete='off'
                                 />
                             <img src={Email} alt="User" width='30px' height='35px'/>
                             {formErrors.email && (
@@ -101,11 +103,12 @@ function Login() {
 
                         <div className='inputBox'>
                             <input
-                                type="text"
+                                type="password"
                                 placeholder='Password'
                                 name='password'
                                 value={formValues.password}
                                 onChange={handleChange}
+                                autoComplete='off'
                             />
                             <img src={Password} alt="Password"  width='30px' height='35px'/>
                             {formErrors.password && (
