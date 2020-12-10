@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import { Router } from 'react-router-dom';
+import history from './app/main/apps/@history/@history';
+import Routes from "./app/main/apps/routes/index";
+import AppContext from './AppContext';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+
+                <Router history={history}>
+                    <Routes />
+                </Router>
+  ,
   document.getElementById('root')
 );
 
