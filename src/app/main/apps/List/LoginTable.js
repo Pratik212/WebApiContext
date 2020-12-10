@@ -6,6 +6,7 @@ function LoginTable(){
     const handleSubmitData = (e) => {
         e.preventDefault();
         localStorage.removeItem('user');
+        localStorage.removeItem('email');
         localStorage.removeItem('password');
         history.push('/login')
         window.location.reload();
@@ -22,7 +23,7 @@ function LoginTable(){
                           UserName <br/> <span style={{color: 'white'}}>{localStorage.getItem('user')}</span>
                         </div>
                         <div className='inputBox'>
-                          Password <br/> <span style={{color: 'white'}}>{localStorage.getItem('password')}</span>
+                          Email <br/> <span style={{color: 'white'}}>{localStorage.getItem('email')}</span>
                         </div>
                         <div className='inputBoxes'>
                             <button style={{background:'white'}} className='btn' type="submit">

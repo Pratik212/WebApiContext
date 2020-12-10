@@ -18,6 +18,7 @@ function Login() {
     const submitForm = () => {
         console.log(formValues);
         localStorage.setItem('user',formValues.user);
+        localStorage.setItem('email',formValues.email);
         localStorage.setItem('password',formValues.password);
         history.push('/loginTable')
             window.location.reload();
@@ -39,6 +40,12 @@ function Login() {
 
     const validate = (values) => {
         let errors = {};
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+        if (!values.email) {
+            errors.email = "Cannot be blank";
+        } else if (!regex.test(values.email)) {
+            errors.email = "Invalid email format";
+        }
         if (!values.user) {
             errors.user = "Please enter user name";
         }
@@ -74,6 +81,20 @@ function Login() {
                             <img src={User} alt="User" width='30px' height='35px'/>
                             {formErrors.user && (
                                 <div style={{color: 'white'}} className="error">{formErrors.user}</div>
+                            )}
+                        </div>
+
+                        <div className='inputBox'>
+                            <input
+                                type="email"
+                                placeholder='email'
+                                name='email'
+                                value={formValues.email}
+                                onChange={handleChange}
+                                />
+                            <img src={User} alt="User" width='30px' height='35px'/>
+                            {formErrors.email && (
+                                <div style={{color: 'white'}} className="error">{formErrors.email}</div>
                             )}
                         </div>
 
