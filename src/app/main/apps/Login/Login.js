@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import './login.css';
 import User from '../../../../assets/img/123.png'
 import Password from '../../../../assets/img/234.png'
+import Email from '../../../../assets/img/432.png'
 import history from '../@history';
 
 function Login() {
@@ -92,7 +93,7 @@ function Login() {
                                 value={formValues.email}
                                 onChange={handleChange}
                                 />
-                            <img src={User} alt="User" width='30px' height='35px'/>
+                            <img src={Email} alt="User" width='30px' height='35px'/>
                             {formErrors.email && (
                                 <div style={{color: 'white'}} className="error">{formErrors.email}</div>
                             )}
