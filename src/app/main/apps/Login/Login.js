@@ -43,7 +43,7 @@ function Login() {
         let errors = {};
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
         if (!values.email) {
-            errors.email = "Cannot be blank";
+            errors.email = "Please enter your email";
         } else if (!regex.test(values.email)) {
             errors.email = "Invalid email format";
         }
